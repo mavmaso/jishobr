@@ -8,4 +8,4 @@
 
 adverbio = WordType.create(title: 'adverbio')
 noun = WordType.create(title:'substantivo')
-Word.create(romaji: 'tatoeba', pt: 'por exemplo', kana: 'たとえば', word_type: adverbio.title)
+Word.create(romaji: 'tatoeba', pt: 'por exemplo', kana: 'たとえば', kanji: '例えば', word_type: adverbio)

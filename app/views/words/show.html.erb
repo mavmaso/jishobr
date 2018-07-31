@@ -1,0 +1,10 @@
+<div class='container'>
+  <h2><%= @word.romaji %></h2>
+  <p> Tradução: <%= @word.pt %></p>
+  <ul>
+    <li>Tipo: <%= @word.word_type.title %></li>
+    <li>Kana: <%= @word.kana %></li>
+    <li>Kanji: <%= @word.kanji %></li>
+  </ul>
+  Observações: <%= @word.obs %>
+</div>

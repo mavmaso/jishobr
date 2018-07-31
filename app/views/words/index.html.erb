@@ -1,7 +1,7 @@
 <div class='container'>
-  <h2>Resultados da pesquisa</h2>
+  <h3>Resultados da pesquisa</h3>
   <% @words.each do |word| %>
-  <h3><%= word.romaji %></h3>
+  <h2><%= link_to(word.romaji,word) %></h2>
   <p> Tradução: <%= word.pt %></p>
   <ul>
     <li>Tipo: <%= word.word_type.title %></li>
