@@ -1,0 +1,15 @@
+<div class='container'>
+  <h2>Resultados da pesquisa</h2>
+  <% @words.each do |word| %>
+  <h3><%= word.romaji %></h3>
+  <p> Tradução: <%= word.pt %></p>
+  <ul>
+    <li>Tipo: <%= word.word_type.title %></li>
+    <li>Kana: <%= word.kana %></li>
+    <li>Kanji: <%= word.kanji %></li>
+  </ul>
+  Observações: <%= word.obs %>
+  <br>
+  <hr>
+  <% end %>
+</div>

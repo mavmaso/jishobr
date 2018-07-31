@@ -1,24 +1,32 @@
-# README
+Jisho br
+=======
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Jisho br** é uma aplicação feita para
 
-Things you may want to cover:
+## Setup do Projeto
 
-* Ruby version
+### Pré requisitos
 
-* System dependencies
+ - Ter [Ruby](https://www.ruby-lang.org) versão 2.5.1 previamente instalado na máquina
 
-* Configuration
+### Configurando e executando testes
 
-* Database creation
+ - `bin/setup`
+ - `bundle exec rspec`
 
-* Database initialization
+#### Docker
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Executando a aplicação
 
-* Deployment instructions
+Após os passos de configuração executar o comando `rails server` e acessar pela
+url [http://localhost:3000/](http://localhost:3000/).
 
-* ...
+#### Docker
+
+
+## Contribuindo
+
+
+### Principais contribuidores
+ - [mavmaso](https://github.com/mavmaso)
