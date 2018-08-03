@@ -5,10 +5,10 @@
 <%= form_tag(kanjis_path, method: "get") do %>
       <div class="row find-box">
         <div class="col-sm-2">
-          <%= label_tag :querys, "Procura" %>
+          <%= label_tag :queri, "Procura" %>
         </div>
         <div class="col-sm-6">
-          <%= text_field_tag :querys, nil, placeholder: 'Kanji, On Yomi, Kun Yomi', class: 'form-control' %>
+          <%= text_field_tag :queri, nil, placeholder: 'Kanji, On Yomi, Kun Yomi', class: 'form-control' %>
         </div>
         <div class="col-sm-4">
           <%= submit_tag "Procurar", class: 'btn btn-primary' %>

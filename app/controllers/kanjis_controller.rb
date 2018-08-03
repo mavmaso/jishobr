@@ -13,6 +13,6 @@ class KanjisController < ApplicationController
   private
 
   def search_query
-    params[:query]
+    params[:queri]
   end
 end
