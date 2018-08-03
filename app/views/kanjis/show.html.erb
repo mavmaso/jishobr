@@ -1,0 +1,10 @@
+<div class='container'>
+  <h2><%= @kanji.title %></h2>
+  <p> JLPT: <%= @kanji.jlpt.title %></p>
+  <ul>
+    <li>Nivel de uso: <%= @kanji.most_used %></li>
+    <li>On: <%= @kanji.on %></li>
+    <li>Kun: <%= @kanji.kun %></li>
+  </ul>
+  Exemplos: <%= @kanji.eg %>
+</div>

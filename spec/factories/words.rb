@@ -6,5 +6,6 @@ FactoryBot.define do
     pt 'Meu Texto'
     obs 'Observações em geral'
     word_type
+    jlpt
   end
 end
