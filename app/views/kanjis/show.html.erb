@@ -1,10 +1,14 @@
 <div class='container'>
+<br>
   <h2><%= @kanji.title %></h2>
-  <p> JLPT: <%= @kanji.jlpt.title %></p>
+  <p> Sentido: <%= @kanji.pt %></p>
   <ul>
-    <li>Nivel de uso: <%= @kanji.most_used %></li>
-    <li>On: <%= @kanji.on %></li>
+    <li>On: <%= @kanji.onyomi %></li>
     <li>Kun: <%= @kanji.kun %></li>
+    <li>Tracos: <%= @kanji.strike %></li>
+    <li>JLPT: <%= @kanji.jlpt.title %></li>
+    <li>Nivel de uso: <%= @kanji.most_used %></li>
+    <li>Radical: <%= @kanji.radical %></li>
   </ul>
   Exemplos: <%= @kanji.eg %>
 </div>

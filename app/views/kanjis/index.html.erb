@@ -2,14 +2,12 @@
   <h3>Resultados da pesquisa de Kanjis</h3>
   <% @kanjis.each do |kanji| %>
   <h2><%= link_to(kanji.title,kanji) %></h2>
-  <p> Radical: <%= kanji.radical %></p>
+  <p> Sentido: <%= kanji.pt %></p>
   <ul>
-    <li>Nivel de uso:  <%= kanji.most_used %></li>
-    <li>On:  <%= kanji.on %></li>
-    <li>Kanji: <%= kanji.kun %></li>
+    <li>On:  <%= kanji.onyomi %></li>
+    <li>Kun: <%= kanji.kun %></li>
     <li>JLPT:  <%= kanji.jlpt.title %></li>
   </ul>
-  Exemplos: <%= kanji.eg %>
   <br>
   <hr>
   <% end %>

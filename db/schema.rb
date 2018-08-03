@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_010957) do
+ActiveRecord::Schema.define(version: 2018_08_03_214124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(version: 2018_08_03_010957) do
     t.string "radical"
     t.string "most_used"
     t.integer "strike"
-    t.string "on"
     t.string "kun"
     t.text "eg"
     t.bigint "jlpt_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pt"
+    t.string "onyomi"
     t.index ["jlpt_id"], name: "index_kanjis_on_jlpt_id"
   end
 

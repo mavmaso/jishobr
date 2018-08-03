@@ -23,7 +23,7 @@ feature 'search word' do
   end
   scenario 'view word by word' do
     tipo = WordType.create(title: 'adverbio')
-    create(:word, romaji: 'tatoeba', pt: 'exemplo', kana: 'たとえば', 
+    create(:word, romaji: 'tatoeba', pt: 'exemplo', kana: 'たとえば',
                   kanji: '例えば', word_type: tipo)
     visit root_path
     fill_in 'Pesquise', with: 'tatoeba'

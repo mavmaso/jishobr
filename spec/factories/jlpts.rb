@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :jlpt do
-    title "N5"
+    title 'N5'
   end
 end
