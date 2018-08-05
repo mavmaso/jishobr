@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(admin: true, email: 'user@mail.com', password: '123qwe', name: 'Teste')
 n5 = Jlpt.create(title: 'N5')
 adverbio = WordType.create(title: 'adverbio')
 noun =  WordType.create(title:'substantivo')

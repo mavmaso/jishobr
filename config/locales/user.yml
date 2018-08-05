@@ -7,4 +7,5 @@ pt-BR:
         email: Email
         remember_me: 'Manter-me logado'
         password: 'Senha'
+        name: 'Nome'
 

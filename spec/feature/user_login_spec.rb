@@ -18,6 +18,6 @@ feature 'User login' do
     fill_in 'Senha', with:'123456'
     click_on 'Logar'
     expect(page).to have_content('Usuario: Zeh Teste')
-    expect(page).to have_content('ADMIN')
+    expect(page).to have_content('ADMIN = true')
   end
 end
