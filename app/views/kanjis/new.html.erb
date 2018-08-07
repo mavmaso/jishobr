@@ -1,0 +1,20 @@
+<div style="width:800px; margin:0 auto;">
+<h1>Adicionar Novo Kanji ao Jisho</h1>
+<%= simple_form_for(@kanji) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title, label: 'Kanji' %>
+  <%= f.input :onyomi, label: 'On' %>
+  <%= f.input :kun %>
+  <%= f.input :pt, label: 'Sentido' %>
+  <%= f.input :most_used, label: 'Mais usados' %>
+  <%= f.input :radical %>
+  <%= f.input :strike, label: 'Tracos' %>
+  <%= f.input :eg, label: 'Exemplos de uso' %>
+  <%= f.label :jlpt_id, 'JLPT' %>
+  <%= f.collection_select(:jlpt_id , Jlpt.all, :id , :title) %>
+  <br>
+  <%= f.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>
+<br>
+<br>
+</div>

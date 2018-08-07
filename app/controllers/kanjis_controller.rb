@@ -10,6 +10,10 @@ class KanjisController < ApplicationController
     @kanji = Kanji.find(params[:id])
   end
 
+  def new
+    @kanji = Kanji.new
+  end
+
   private
 
   def search_query

@@ -10,6 +10,12 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
   end
 
+  def new
+    @word = Word.new
+  end
+
+  def create; end
+
   private
 
   def search_query
