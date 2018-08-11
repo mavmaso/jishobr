@@ -38,14 +38,15 @@ feature 'Edit Word' do
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
     click_on 'Add Palavras'
+    save_page
     fill_in 'Romaji', with: ' '
     fill_in 'Pt', with: ' '
     fill_in 'Kana', with: ' '
-    fill_in 'kanji', with: '例えば'
+    fill_in 'Kanji', with: '例えば'
     select 'N3', from: 'JLPT'
     click_on 'Enviar'
-    expect(page).to_not have_content('Adicionado com sucesso')
     expect(page).to have_content('例えば')
     expect(page).to have_content('N3')
+    expect(page).to_not have_content('Adicionado com sucesso')
   end
 end
