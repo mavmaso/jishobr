@@ -26,7 +26,6 @@ feature 'Add Word' do
     expect(page).to have_content('例えば')
     expect(page).to have_content('adverbio')
     expect(page).to have_content('N3')
-    expect(page).to have_content('')
   end
   scenario 'cant be blank' do
     create(:user, admin: true)

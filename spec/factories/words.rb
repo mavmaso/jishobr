@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :word do
-    romaji 'MyString'
+    romaji 'tatoeba'
     kana 'MyString'
     kanji 'MyString'
-    pt 'Meu Texto'
+    pt 'exemplo'
     obs 'Observações em geral'
     word_type
     jlpt
