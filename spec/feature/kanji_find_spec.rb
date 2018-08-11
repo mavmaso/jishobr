@@ -4,8 +4,8 @@ feature 'Kanji find' do
   scenario 'successfully' do
     create(:kanji, title: '例', onyomi: 'レイ', kun: 'たと.える', pt: 'exemplo')
     visit root_path
-    fill_in 'Procura', with: '例'
-    click_on 'Procurar'
+    fill_in 'Pesquise', with: '例'
+    click_on 'Buscar'
     expect(page).to have_css('h3', text: 'Resultados da pesquisa de Kanjis')
     expect(page).to have_content('例')
     expect(page).to have_content('exemplo')
@@ -17,8 +17,8 @@ feature 'Kanji find' do
     create(:kanji, title: '例', onyomi: 'レイ', kun: 'たと.える',pt: 'exemplo',
                    radical: '人 (亻)', strike: 8, most_used: '399 de 2500')
     visit root_path
-    fill_in 'Procura', with: '例'
-    click_on 'Procurar'
+    fill_in 'Pesquise', with: '例'
+    click_on 'Buscar'
     click_on '例'
     expect(page).to have_content('例')
     expect(page).to have_content('exemplo')

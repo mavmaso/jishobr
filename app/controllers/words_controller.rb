@@ -1,7 +1,8 @@
 class WordsController < ApplicationController
   def index
     @words = WordService.search(search_query)
-    return unless @words.empty?
+    @kanjis = KanjiService.search(search_query)
+    return unless(@words.empty? && @kanjis.empty?)
     flash[:error] = 'Não foi encontrado nada'
     redirect_to root_path
   end
