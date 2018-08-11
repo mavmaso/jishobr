@@ -46,10 +46,6 @@ feature 'Add Kanji' do
     fill_in 'Radical', with: '人 (亻)'
     select 'N5', from: 'JLPT'
     click_on 'Enviar'
-    expect(page).to have_content('たと.える')
-    expect(page).to have_content('レイ')
-    expect(page).to have_content('人 (亻)')
-    expect(page).to have_content('N5')
     expect(page).to_not have_content('Adicionado com sucesso')
   end
 end

@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.create(email:'user@mail.com', password:'123qwe', admin: true)
 verb1ga = WordType.create(title: 'verbo ichidan', sub_type: 'intransitivo/jidoushi', description: 'blabla')
 verb1wo = WordType.create(title: 'verbo ichidan', sub_type: 'transitivo/tadoushi', description: 'blabla')
 verb5ga = WordType.create(title: 'verbo godan', sub_type: 'intransitivo/jidoushi', description: 'blabla')
@@ -16,7 +16,7 @@ noun = WordType.create(title:'substantivo')
 adji = WordType.create(title: 'adjetivo', sub_type: 'i')
 adjna = WordType.create(title: 'adjetivo', sub_type: 'na')
 n5 = Jlpt.create(title: 'N5')
-Word.create(romaji: 'tatoeba', pt: 'por exemplo', kana: 'たとえば', kanji: '例えば', word_type: adv, jlpt: n5 )
+Word.create(romaji: 'tatoeba', pt: 'exemplo', kana: 'たとえば', kanji: '例えば', word_type: adv, jlpt: n5 )
 Word.create(romaji: 'omiyage', pt: 'presente, souvenir', kana: 'おみやげ', kanji: 'お土産', word_type: noun, jlpt: n5 )
 Word.create(romaji: 'au ', pt: 'encontrar', kana: 'あう', kanji: '会う', word_type: noun, jlpt: n5 )
 Word.create(romaji: 'ao ', pt: 'azul', kana: 'あお', kanji: '青', word_type: adji, jlpt: n5 )
@@ -28,3 +28,4 @@ Word.create(romaji: 'akeru', pt: 'abrir-se', kana: 'あける', kanji: '開け�
 Word.create(romaji: 'ageru', pt: 'dar', kana: 'あげる', kanji: '上げる', word_type: verb1wo , jlpt: n5 )
 Word.create(romaji: 'asa', pt: '', kana: 'あさ', kanji: '朝', word_type: noun , jlpt: n5 )
 #Word.create(romaji: '', pt: '', kana: '', kanji: '', word_type: , jlpt: n5)
+Kanji.create(title: '例', onyomi:'レイ', kun: 'たと.える', pt: 'exemplo', most_used: '399 de 2500', radical: '人 (亻)', strike: '8', jlpt: n5, eg: '')

@@ -43,8 +43,6 @@ feature 'Add Word' do
     fill_in 'Kanji', with: '例えば'
     select 'N3', from: 'JLPT'
     click_on 'Enviar'
-    expect(page).to have_content('例えば')
-    expect(page).to have_content('N3')
     expect(page).to_not have_content('Adicionado com sucesso')
   end
 end

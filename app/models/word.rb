@@ -1,6 +1,5 @@
 class Word < ApplicationRecord
   belongs_to :word_type
   belongs_to :jlpt
-
-  def create; end
+  validates :romaji, :pt, :kana, presence: true
 end
