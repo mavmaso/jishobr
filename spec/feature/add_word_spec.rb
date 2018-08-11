@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Edit Word' do
+feature 'Add Word' do
   scenario 'succefully' do
     create(:user, admin: true)
     Jlpt.create(title: 'N3')
@@ -38,7 +38,6 @@ feature 'Edit Word' do
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
     click_on 'Add Palavras'
-    save_page
     fill_in 'Romaji', with: ' '
     fill_in 'Pt', with: ' '
     fill_in 'Kana', with: ' '
