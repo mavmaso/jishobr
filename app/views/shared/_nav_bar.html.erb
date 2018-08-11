@@ -1,26 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="<%= root_path %>"><h1 class="logo">JishoBR</h1></a>
-    <section class="pesquisa">
-    <div>
+  <a class="navbar-brand" href="<%= root_path %>"><h1 class="logo">JishoBR</h1></a>
+  <section class="pesquisa">
     <%= form_tag(words_path, method: "get") do %>
-      <div class="row find-box">
-        <div class="col-sm-2">
-          <%= label_tag :query, "Pesquise" %>
-        </div>
-        <div class="col-sm-6">
-          <%= text_field_tag :query, nil, placeholder: 'romaji, kana, kanji, portugues', class: 'form-control' %>
-        </div>
-        <div class="col-sm-4">
-          <%= submit_tag "Buscar", class: 'btn btn-primary' %>
+      <div class='container'>
+        <div class="row justify-content-md-center">
+          <div class="col-sm-2">
+            <%= label_tag :query, "Pesquise" %>
+          </div>
+          <div class="col">
+            <%= text_field_tag :query, nil, placeholder: 'romaji, kana, kanji, portugues', class: 'form-control' %>
+          </div>
+          <div class="col-sm-2">
+            <%= submit_tag "Buscar", class: 'btn btn-primary' %>
+          </div>
         </div>
       </div>
     <% end %>
-    </div>
-    </section>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto lista">
-        <li class="nav-item">
-        </li>
-      </ul>
-    </div>
+  </section>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto lista">
+      <li class="nav-item">
+      </li>
+    </ul>
+  </div>
 </nav>
