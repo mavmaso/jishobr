@@ -10,23 +10,23 @@ feature 'Edit word' do
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
     click_on 'Editar'
-    select 'word', from: 'Editaveis'
+    click_on 'Palavras'
     click_on 'tateba'
     fill_in 'Romaji', with: 'tatoeba'
     fill_in 'Pt', with: 'exemplo'
     fill_in 'Kana', with: 'たとえば'
     fill_in 'Kanji', with: '例えば'
     fill_in 'Observacoes', with: ' '
-    select 'adverbio', from: 'Tipo'
-    select 'N3', from: 'JLPT'
+    select 'substantivo', from: 'Tipo'
+    select 'N5', from: 'JLPT'
     click_on 'Enviar'
     expect(page).to have_content('Editado com sucesso')
     expect(page).to have_content('tatoeba')
     expect(page).to have_content('exemplo')
     expect(page).to have_content('たとえば')
     expect(page).to have_content('例えば')
-    expect(page).to have_content('adverbio')
-    expect(page).to have_content('N3')
+    expect(page).to have_content('substantivo')
+    expect(page).to have_content('N5')
   end
   scenario 'delete' do
     create(:word, romaji:'tateba')
@@ -37,7 +37,7 @@ feature 'Edit word' do
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
     click_on 'Editar'
-    select 'word', from: 'Editaveis'
+    click_on 'Palavras'
     click_on 'tateba'
     click_on 'Apagar'
   end

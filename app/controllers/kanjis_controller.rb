@@ -1,9 +1,6 @@
 class KanjisController < ApplicationController
   def index
-    @kanjis = KanjiService.search(search_query)
-    return unless @kanjis.empty?
-    flash[:error] = 'Não foi encontrado nada'
-    redirect_to root_path
+    @kanjis = Kanji.all
   end
 
   def show
@@ -24,6 +21,7 @@ class KanjisController < ApplicationController
     end
   end
 
+  def edit; end
 
   private
 

@@ -1,0 +1,20 @@
+<div style="width:800px; margin:0 auto;">
+<h1>Editar Palavra no Jisho</h1>
+<%= simple_form_for(@word) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :romaji %>
+  <%= f.input :pt %>
+  <%= f.input :kana %>
+  <%= f.input :kanji %>
+  <%= f.input :obs, label: 'Observacoes' %>
+  <%= f.label :word_type_id, 'Tipo' %>
+  <%= f.collection_select(:word_type_id , WordType.all, :id , :title) %>
+  <%= f.label :jlpt_id, 'JLPT' %>
+  <%= f.collection_select(:jlpt_id , Jlpt.all, :id , :title) %>
+  <br>
+  <%= f.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>
+<br>
+<br>
+</div>
+

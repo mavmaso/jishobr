@@ -10,7 +10,7 @@ feature 'Edit kanji' do
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
     click_on 'Editar'
-    select 'kanji', from: 'Editaveis'
+    click_on 'Kanji'
     click_on '亻'
     fill_in 'Kanji', with: '例'
     fill_in 'On', with: 'レイ'
@@ -41,7 +41,7 @@ feature 'Edit kanji' do
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
     click_on 'Editar'
-    select 'kanji', from: 'Editaveis'
+    click_on 'Kanji'
     click_on '亻'
     click_on 'Apagar'
   end

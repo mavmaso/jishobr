@@ -1,5 +1,5 @@
 <div class='container'>
-  <h3>Resultados da pesquisa de Kanjis</h3>
+  <br>
   <% @kanjis.each do |kanji| %>
   <h2><%= link_to(kanji.title,kanji) %></h2>
   <p> Sentido: <%= kanji.pt %></p>
@@ -9,6 +9,10 @@
     <li>JLPT:  <%= kanji.jlpt.title %></li>
   </ul>
   <br>
+  <% if current_user.admin? %>
+    <%= link_to 'Editar', edit_kanji_path %>
+    <%= link_to 'Apagar', edit_kanji_path %>
+  <% end %>
   <hr>
   <% end %>
 </div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
-  resources :words, only: [:index, :show, :new, :create]
-  resources :kanjis, only: [:index, :show, :new, :create]
+  get '/search', to: 'words#search', as: 'search'
+  resources :words, only: [:index, :show, :new, :create, :edit, :update]
+  resources :kanjis, only: [:index, :show, :new, :create, :edit, :update]
 end

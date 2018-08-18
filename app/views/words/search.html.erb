@@ -1,0 +1,34 @@
+<div class='container'>
+  <div class="row">
+    <div class="col-sm">
+      <h3>Resultados da pesquisa em palavras</h3>
+      <% @words.each do |word| %>
+      <h2><%= link_to(word.romaji,word) %></h2>
+      <p> Tradução: <%= word.pt %></p>
+      <ul>
+        <li>Tipo:  <%= word.word_type.title %></li>
+        <li>Kana:  <%= word.kana %></li>
+        <li>Kanji: <%= word.kanji %></li>
+        <li>JLPT:  <%= word.jlpt.title %></li>
+      </ul>
+      Observações: <%= word.obs %>
+      <br>
+      <hr>
+      <% end %>
+    </div>
+    <div class='col-sm'>
+      <h3>Resultados da pesquisa de Kanjis</h3>
+      <% @kanjis.each do |kanji| %>
+      <h2><%= link_to(kanji.title,kanji) %></h2>
+      <p> Sentido: <%= kanji.pt %></p>
+      <ul>
+        <li>On:  <%= kanji.onyomi %></li>
+        <li>Kun: <%= kanji.kun %></li>
+        <li>JLPT:  <%= kanji.jlpt.title %></li>
+      </ul>
+      <br>
+      <hr>
+      <% end %>
+    <div>
+  </div>
+</div>
