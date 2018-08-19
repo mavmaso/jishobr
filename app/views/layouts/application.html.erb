@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jishobr</title>
+    <title>Jishobr:Dicionario de Japones</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,8 +12,8 @@
   <body>
     <%= render partial: 'shared/nav_bar' %>
     <%= render partial: 'shared/nav2' %>
-    <%= notice %>
-    <%= alert %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
   <footer>

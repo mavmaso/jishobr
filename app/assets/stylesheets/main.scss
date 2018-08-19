@@ -1,1 +1,73 @@
 @import "bootstrap"; 
+
+// Menu Colours
+$menu-bg: #333;
+$menu-hover: #444;
+$menu-border: #555;
+
+nav {
+  //top: 0; // Fix the menu to the top
+  //position: fixed; // Fix the menu to the top
+  height: 70px;
+	width: 100%;
+  background-color: $menu-bg;
+
+} //nav
+
+@media screen and (max-width: 480px) {
+  h1 {
+	  font-size: 2.8em;
+  }
+
+  nav {
+		height: auto;
+		border-bottom: 0;
+	
+	  ul {
+		  display: none;
+		  height: auto;
+	  }	
+	
+	  li {
+		  width: 100%;
+		  float: left;
+		  position: relative;
+    }
+
+  	a {
+	  	text-align: left;
+	  	width: 100%;
+	  	text-indent: 25px;
+			background: $menu-bg;	 
+      border-bottom: 1px solid $menu-border;
+  	}  	
+	
+  	 a:hover {
+	  	background: $menu-hover;
+  	}
+
+	  a#openup:after {
+		  content:"|||";
+      transform:rotate(-90deg);
+      -ms-transform:rotate(-90deg); /* IE 9 */
+      -webkit-transform:rotate(-90deg); /* Safari and Chrome */
+		  width: 30px;
+		  height: 30px;
+		  display: inline-block;
+		  position: absolute;
+		  right: 5px;
+		  top: 20px;
+	  }
+  	  		
+	  a#openup {
+		  display: block;
+		  background-color: $menu-bg;
+		  width: 100%;
+		  position: relative;
+	  }
+  } //nav
+} // media
+
+.cf:before, .cf:after { content:""; display:table; }
+.cf:after { clear:both; }
+.cf { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
