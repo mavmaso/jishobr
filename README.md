@@ -5,6 +5,10 @@ Jisho br
 e ainda oferecer mais recursos conforme for crescendo. Tudo para se tornar um grande aliado aos estudantes
 dessa fascinante lingua.
 
+## URL ##
+
+https://jishobr.herokuapp.com/ 
+
 ## Setup do Projeto
 
 ### Pré requisitos
