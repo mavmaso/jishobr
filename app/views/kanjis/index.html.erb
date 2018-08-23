@@ -1,18 +1,20 @@
 <div class='container'>
   <br>
   <% @kanjis.each do |kanji| %>
-  <h2><%= link_to(kanji.title,kanji) %></h2>
-  <p> Sentido: <%= kanji.pt %></p>
-  <ul>
-    <li>On:  <%= kanji.onyomi %></li>
-    <li>Kun: <%= kanji.kun %></li>
-    <li>JLPT:  <%= kanji.jlpt.title %></li>
-  </ul>
-  <br>
-  <% if current_user.admin? %>
-    <%= link_to 'Editar', edit_kanji_path %>
-    <%= link_to 'Apagar', edit_kanji_path %>
-  <% end %>
+  <div id="<%= "#{kanji.title}"%>">
+    <h2><%= link_to(kanji.title,edit_kanji_path(kanji)) %></h2>
+    <p> Sentido: <%= kanji.pt %></p>
+    <ul>
+      <li>On:  <%= kanji.onyomi %></li>
+      <li>Kun: <%= kanji.kun %></li>
+      <li>JLPT:  <%= kanji.jlpt.title %></li>
+    </ul>
+    <br>
+    <% if current_user.admin? %>
+      <%= link_to 'Editar', edit_kanji_path(kanji) %>
+      <%= link_to 'Apagar', kanji_path(kanji), method: :delete %>
+    <% end %>
+  </div>
   <hr>
   <% end %>
 </div>

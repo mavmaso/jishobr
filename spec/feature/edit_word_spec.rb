@@ -30,6 +30,7 @@ feature 'Edit word' do
   end
   scenario 'delete' do
     create(:word, romaji:'tateba')
+    create(:word, romaji:'omiyage')
     create(:user, admin: true)
     visit root_path
     click_on 'Entrar'
@@ -38,8 +39,12 @@ feature 'Edit word' do
     click_on 'Logar'
     click_on 'Editar'
     click_on 'Palavras'
-    click_on 'tateba'
-    click_on 'Apagar'
+    within '#word-tateba' do
+      click_on 'Apagar'
+    end
+    expect(page).to_not have_content('tateba')
+    expect(page).to have_content('Apagado com sucesso')
+    expect(page).to have_content('omiyage')
   end
   scenario 'fail' do
   end

@@ -1,20 +1,24 @@
 <div class='container'>
   <br>
+  
   <% @words.each do |word| %>
-  <h2><%= link_to(word.romaji,edit_word_path(word)) %></h2>
-  <p> Tradução: <%= word.pt %></p>
-  <ul>
-    <li>Tipo:  <%= word.word_type.title %></li>
-    <li>Kana:  <%= word.kana %></li>
-    <li>Kanji: <%= word.kanji %></li>
-    <li>JLPT:  <%= word.jlpt.title %></li>
-  </ul>
-  Observações: <%= word.obs %>
-  <br>
-    <% if current_user.admin? %>
-    <%= link_to 'Editar', edit_word_path(word) %>
-    <%= link_to 'Apagar', edit_word_path(word) %>
+  <div id="<%= "word-#{word.romaji}"%>">
+    <h2><%= link_to(word.romaji,edit_word_path(word)) %></h2>
+    <p> Tradução: <%= word.pt %></p>
+    <ul>
+      <li>Tipo:  <%= word.word_type.title %></li>
+      <li>Kana:  <%= word.kana %></li>
+      <li>Kanji: <%= word.kanji %></li>
+      <li>JLPT:  <%= word.jlpt.title %></li>
+    </ul>
+    Observações: <%= word.obs %>
+    <br>
+      <% if current_user.admin? %>
+      <%= link_to 'Editar', edit_word_path(word) %>
+      <%= link_to 'Apagar', word_path(word), method: :delete %>
+    <% end %>
+    <hr>
+  </div>
   <% end %>
-  <hr>
-  <% end %>
+
 </div>

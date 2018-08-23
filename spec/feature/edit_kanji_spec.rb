@@ -11,7 +11,9 @@ feature 'Edit kanji' do
     click_on 'Logar'
     click_on 'Editar'
     click_on 'Kanji'
-    click_on '亻'
+    within '#亻' do
+      click_on 'Editar'
+    end
     fill_in 'Kanji', with: '例'
     fill_in 'On', with: 'レイ'
     fill_in 'Kun', with: 'たと.える'
@@ -22,7 +24,7 @@ feature 'Edit kanji' do
     fill_in 'Exemplos de uso', with: ''
     select 'N5', from: 'JLPT'
     click_on 'Enviar'
-    expect(page).to have_content('Adicionado com sucesso')
+    expect(page).to have_content('Editado com sucesso')
     expect(page).to have_content('例')
     expect(page).to have_content('exemplo')
     expect(page).to have_content('たと.える')
@@ -33,8 +35,9 @@ feature 'Edit kanji' do
     expect(page).to have_content('8')
   end
   scenario 'delete' do
-    create(:word, romaji:'tateba')
     create(:kanji, title:'亻')
+    create(:kanji, title:'例')
+    create(:user, admin: true)
     visit root_path
     click_on 'Entrar'
     fill_in 'Email', with: 'user@mail.com'
@@ -42,8 +45,12 @@ feature 'Edit kanji' do
     click_on 'Logar'
     click_on 'Editar'
     click_on 'Kanji'
-    click_on '亻'
-    click_on 'Apagar'
+    within '#亻' do
+      click_on 'Apagar'
+    end
+    expect(page).to_not have_content('亻')
+    expect(page).to have_content('Apagado com sucesso')
+    expect(page).to have_content('例')
   end
   scenario 'fail' do
   end

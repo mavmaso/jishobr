@@ -21,7 +21,26 @@ class KanjisController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit 
+    @kanji = Kanji.find(params[:id])
+  end
+
+  def update
+    @kanji = Kanji.find(params[:id])
+    if @kanji.update(kanji_params)
+      redirect_to @kanji, notice: 'Editado com sucesso'
+    else
+      flash[:alert] = 'Não pode ser enviada'
+      render :new
+    end
+  end
+
+  def destroy
+    @kanji = Kanji.find(params[:id])
+    @kanji.destroy
+  
+    redirect_to kanjis_path, notice: 'Apagado com sucesso'
+  end
 
   private
 
