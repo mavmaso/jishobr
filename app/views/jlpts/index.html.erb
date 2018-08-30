@@ -1,0 +1,15 @@
+<div class='container'>
+  <div class="row">
+    <% @jlpts.each do |jlpt| %>
+      <div class='col-sm' id="<%= "jlpt-#{jlpt.title}"%>">
+        <h2><%= link_to(jlpt.title,edit_jlpt_path(jlpt)) %></h2>
+        <% if current_user.admin? %>
+          <%= link_to 'Editar', edit_word_path(jlpt) %>
+          <%= link_to 'Apagar', word_path(jlpt), method: :delete %>
+        <% end %>
+        <hr>
+      </div>
+    <% end %>
+  </div>
+</div>
+

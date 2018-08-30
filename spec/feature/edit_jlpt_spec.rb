@@ -7,6 +7,7 @@ feature 'Edit JLPT and Word_Type' do
     create(:jlpt)
     create(:jlpt, title: 'N4')
     visit root_path
+    click_on 'Entrar'
     fill_in 'Email', with: 'user@mail.com'
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
@@ -24,6 +25,7 @@ feature 'Edit JLPT and Word_Type' do
     create(:jlpt)
     create(:jlpt, title: 'N4')
     visit root_path
+    click_on 'Entrar'
     fill_in 'Email', with: 'user@mail.com'
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
@@ -40,6 +42,7 @@ feature 'Edit JLPT and Word_Type' do
      create(:word_type)
      create(:word_type, title: 'sub')
      visit root_path
+     click_on 'Entrar'
      fill_in 'Email', with: 'user@mail.com'
      fill_in 'Senha', with: '123456'
      click_on 'Logar'
@@ -57,6 +60,7 @@ feature 'Edit JLPT and Word_Type' do
     create(:word_type)
     create(:word_type, title: 'sub')
     visit root_path
+    click_on 'Entrar'
     fill_in 'Email', with: 'user@mail.com'
     fill_in 'Senha', with: '123456'
     click_on 'Logar'
