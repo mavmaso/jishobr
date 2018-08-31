@@ -10,4 +10,6 @@ class JlptsController < ApplicationController
   
     redirect_to jlpts_path, notice: 'Apagado com sucesso'
   end
+
+  def edit; end
 end
