@@ -1,15 +1,31 @@
 <div class='container'>
   <div class="row">
+    <div class="col-sm">
     <% @jlpts.each do |jlpt| %>
-      <div class='col-sm' id="<%= "jlpt-#{jlpt.title}"%>">
+      <div class='col-sm' id="<%= "#{jlpt.title}"%>">
         <h2><%= link_to(jlpt.title,edit_jlpt_path(jlpt)) %></h2>
+        <p> ID: <%= jlpt.id %> </p>
         <% if current_user.admin? %>
-          <%= link_to 'Editar', edit_word_path(jlpt) %>
-          <%= link_to 'Apagar', word_path(jlpt), method: :delete %>
+          <%= link_to 'Editar', edit_jlpt_path(jlpt) %>
+          <%= link_to 'Apagar', jlpt_path(jlpt), method: :delete %>
         <% end %>
         <hr>
       </div>
     <% end %>
+    </div>
+    <div class="col-sm">
+    <% @word_types.each do |word_type| %>
+      <div class='col-sm' id="<%= "#{word_type.title}"%>">
+        <h2><%= link_to(word_type.title,edit_word_type_path(word_type)) %></h2>
+        <p> ID: <%= word_type.id %> </p>
+        <% if current_user.admin? %>
+          <%= link_to 'Editar', edit_word_type_path(word_type) %>
+          <%= link_to 'Apagar', word_type_path(word_type), method: :delete %>
+        <% end %>
+        <hr>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>
 

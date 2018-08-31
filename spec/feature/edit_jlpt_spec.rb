@@ -35,6 +35,7 @@ feature 'Edit JLPT and Word_Type' do
       click_on 'Apagar'
     end
     expect(page).to_not have_content('N5')
+    expect(page).to have_content('Apagado com sucesso')
   end
 =begin
   scenario 'succefully with word_type' do
@@ -58,7 +59,7 @@ feature 'Edit JLPT and Word_Type' do
   scenario 'delete word_type' do
     create(:user, admin: true)
     create(:word_type)
-    create(:word_type, title: 'sub')
+    create(:word_type, title: 'subt')
     visit root_path
     click_on 'Entrar'
     fill_in 'Email', with: 'user@mail.com'
@@ -66,9 +67,10 @@ feature 'Edit JLPT and Word_Type' do
     click_on 'Logar'
     click_on 'Editar'
     click_on 'JLPT-etc'
-    within '#sub' do
+    within '#subt' do
       click_on 'Apagar'
     end
-    expect(page).to_not have_content('substantivo')
+    expect(page).to have_content('Apagado com sucesso')
+    expect(page).to_not have_content('subt')
   end
 end

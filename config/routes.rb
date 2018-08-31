@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :words, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :kanjis, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :jlpts, only: [:index, :edit, :destroy]
-  resources :word_types, only: [:destroy]
+  resources :word_types, only: [:edit, :destroy]
 end
