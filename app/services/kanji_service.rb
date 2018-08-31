@@ -1,8 +1,8 @@
 class KanjiService
   def self.search(search_query)
     return unless search_query
-      Kanji.where(['title LIKE :queri OR onyomi LIKE :queri OR ' \
-                   'kun LIKE :queri OR pt LIKE :queri',
-                   queri: "#{search_query}%"])
+      Kanji.where(['title LIKE :query OR onyomi LIKE :query OR ' \
+                   'kun LIKE :query OR pt LIKE :query',
+                   query: "#{search_query.downcase}%"])
   end
 end
