@@ -44,10 +44,6 @@ class KanjisController < ApplicationController
 
   private
 
-  def search_query
-    params[:queri]
-  end
-
   def kanji_params
     params.require(:kanji)
           .permit(:title, :radical, :most_used, :strike, :kun, :eg, :jlpt_id,

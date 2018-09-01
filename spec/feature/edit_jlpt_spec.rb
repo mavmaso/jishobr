@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'Edit JLPT and Word_Type' do
-=begin
   scenario 'succefully with JLPT' do
     create(:user, admin: true)
     create(:jlpt)
@@ -19,7 +18,6 @@ feature 'Edit JLPT and Word_Type' do
     fill_in 'Jlpt', with: 'N 5'
     expect(page).to have_content('N 5')
   end
-=end
   scenario 'delete JLTP' do
     create(:user, admin: true)
     create(:jlpt)
@@ -37,7 +35,6 @@ feature 'Edit JLPT and Word_Type' do
     expect(page).to_not have_content('N5')
     expect(page).to have_content('Apagado com sucesso')
   end
-=begin
   scenario 'succefully with word_type' do
      create(:user, admin: true)
      create(:word_type)
@@ -53,9 +50,8 @@ feature 'Edit JLPT and Word_Type' do
        click_on 'Editar'
      end
      fill_in 'Jlpt', with: 'substantivo'
-     expect(page),to have_content('substantivo')
+     expect(page).to have_content('substantivo')
   end
-=end
   scenario 'delete word_type' do
     create(:user, admin: true)
     create(:word_type)
