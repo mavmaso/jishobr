@@ -14,6 +14,33 @@ nav {
 
 } //nav
 
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.container {
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+
+.container::after {
+	content: "";
+	display: block;
+}
+
+footer, .container::after {
+	height: 50px;
+}
+
+footer {
+	background-color: $menu-bg;
+}
+
+div.a {
+	text-align: center;
+}
+
 @media screen and (max-width: 480px) {
   h1 {
 	  font-size: 2.8em;
